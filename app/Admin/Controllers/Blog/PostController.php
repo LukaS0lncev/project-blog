@@ -10,6 +10,8 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 use Encore\Admin\Facades\Admin;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends AdminController
 {
@@ -30,7 +32,6 @@ class PostController extends AdminController
         $grid = new Grid(new Post());
         $grid->column('id', __('Id'));
         $grid->column('title', __('Title'));
-        $grid->column('post', __('Post'));
         $grid->column('category.name');
         $grid->tags()->display(function ($tags) {
             $tags = array_map(function ($tag) {
@@ -73,9 +74,10 @@ class PostController extends AdminController
         $form = new Form(new Post());
 
         $form->text('title', __('Title'));
-        $form->editor('post', 'Post');
+        $form->simplemde('post', 'Post');
         $form->select('blog_category_id')->options(Category::all()->pluck('name','id'));
         $form->multipleSelect('tags','Tags')->options(Tag::all()->pluck('name','id'));
         return $form;
     }
+
 }

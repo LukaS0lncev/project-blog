@@ -112,6 +112,10 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
       <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
       <path value="$PROJECT_DIR$/vendor/encore/laravel-admin" />
+      <path value="$PROJECT_DIR$/vendor/laravel-admin-ext/wang-editor" />
+      <path value="$PROJECT_DIR$/vendor/laravel-admin-ext/summernote" />
+      <path value="$PROJECT_DIR$/vendor/laravel-admin-ext/simplemde" />
+      <path value="$PROJECT_DIR$/vendor/laravel-admin-ext/media-manager" />
     </include_path>
   </component>
   <component name="PhpInterpreters">

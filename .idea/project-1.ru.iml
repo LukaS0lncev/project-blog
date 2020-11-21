@@ -31,6 +31,10 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/hamcrest/hamcrest-php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/laravel-admin-ext/media-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/laravel-admin-ext/simplemde" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/laravel-admin-ext/summernote" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/laravel-admin-ext/wang-editor" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/framework" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/tinker" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/league/commonmark" />

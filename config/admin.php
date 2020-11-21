@@ -395,16 +395,25 @@ return [
     |
     */
     'extensions' => [
-        'wang-editor' => [
+        'simplemde' => [
 
-            // Если вы хотите отключить это расширение, установите для него значение false
+            // Set to false if you want to disable this extension
             'enable' => true,
 
-            // Конфигурация редактора
+            // If you want to set an alias for the calling method
+            //'alias' => 'markdown',
+
+            // Editor configuration
             'config' => [
-                // Интерфейс `/ upload` используется для загрузки файлов. Логика загрузки должна быть реализована вами. Вы можете обратиться к следующему` Upload image`
-                //'uploadImgServer' => '/upload'
+                'blogImageUpload' => "/upload/blog/image",
+                'blogImagePaste' => "/upload/blog/image/paste",
+                'blogFileUpload' => "/upload/blog/file"
             ]
+        ],
+        'media-manager' => [
+
+            // Select a local disk that you configured in `config/filesystem.php`
+            'disk' => 'public'
         ]
     ],
 ];
