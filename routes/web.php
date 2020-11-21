@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Storage;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('blog', [App\Http\Controllers\BlogController::class, 'index']);
 Route::post('upload/blog/image', [App\Http\Controllers\UploadController::class, 'PostBlogImageUpload']);
 Route::post('upload/blog/image/paste', [App\Http\Controllers\UploadController::class, 'PostBlogImageUploadPaste']);
 Route::post('upload/blog/file', [App\Http\Controllers\UploadController::class, 'PostBlogFileUpload']);

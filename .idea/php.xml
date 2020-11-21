@@ -116,6 +116,7 @@
       <path value="$PROJECT_DIR$/vendor/laravel-admin-ext/summernote" />
       <path value="$PROJECT_DIR$/vendor/laravel-admin-ext/simplemde" />
       <path value="$PROJECT_DIR$/vendor/laravel-admin-ext/media-manager" />
+      <path value="$PROJECT_DIR$/vendor/erusev/parsedown" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
