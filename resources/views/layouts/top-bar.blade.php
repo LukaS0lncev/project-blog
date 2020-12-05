@@ -5,18 +5,18 @@
             <div class="row justify-content-between">
                 <div class="col-12 col-md-auto">
 
-                    <!-- Top Links
+{{-- <!-- Top Links
                     ============================================= -->
                     <div class="top-links on-click">
                         <ul class="top-links-container">
                             <li class="top-links-item"><a href="/">Главная</a>
                                 <ul class="top-links-sub-menu">
                                     <li class="top-links-item"><a href="/o-nas">О нас</a></li>
-                                    {{--<li class="top-links-item"><a href="sitemap.html">Карта сайта</a></li>--}}
+                                    <li class="top-links-item"><a href="sitemap.html">Карта сайта</a></li>
                                 </ul>
                             </li>
                             <li class="top-links-item"><a href="/kontakty">Контакты</a></li>
-    {{--<li class="top-links-item"><a href="login-register.html">Авторизация</a>
+    <li class="top-links-item"><a href="login-register.html">Авторизация</a>
         <div class="top-links-section">
             <form id="top-login" autocomplete="off">
                 <div class="form-group">
@@ -34,10 +34,10 @@
                 <button class="btn btn-danger btn-block" type="submit">Авторизоваться</button>
             </form>
         </div>
-    </li>--}}
+    </li>
 </ul>
 </div><!-- .top-links end -->
-
+--}}
 </div>
 
 <div class="col-12 col-md-auto">
