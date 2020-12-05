@@ -14,12 +14,16 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "intervention/image": "^2.5",
         "laravel-admin-ext/media-manager": "1.x",
         "laravel-admin-ext/simplemde": "^1.0",
         "laravel-admin-ext/summernote": "^1.0",
         "laravel-admin-ext/wang-editor": "1.*",
         "laravel/framework": "^8.12",
-        "laravel/tinker": "^2.5"
+        "laravel/jetstream": "^1.6",
+        "laravel/sanctum": "^2.6",
+        "laravel/tinker": "^2.5",
+        "livewire/livewire": "^2.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

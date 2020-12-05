@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Tools\ImageLog;
 
 class UploadController extends Controller
 {
@@ -31,6 +32,11 @@ class UploadController extends Controller
                 'name' => $name,
                 'md5_name' => $md5_name
             );
+            $image_log = new ImageLog();
+            $image_log->url = $url;
+            $image_log->name = $name;
+            $image_log->md5_name = $md5_name;
+            $image_log->save();
         }
 
         return json_encode($results);
@@ -88,6 +94,11 @@ class UploadController extends Controller
                 'name' => $name,
                 'md5_name' => $md5_name
             );
+            $image_log = new ImageLog();
+            $image_log->url = $url;
+            $image_log->name = $name;
+            $image_log->md5_name = $md5_name;
+            $image_log->save();
 
         return json_encode($results);
     }

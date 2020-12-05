@@ -11,16 +11,12 @@ class BlogController extends Controller
 {
     public function index () {
 
-        $user = Auth::user();
-        dd($user);
-        $parsedown = new \Parsedown();
-        $posts = Post::all();
+        $posts = Post::paginate(10);
+        return view('blog.index',['posts' => $posts]);
+    }
 
-        foreach ($posts as &$post){
-            $post->post = $parsedown->text($post->post);
-        }
-
-        return view('test',['posts' => $posts]);
-
+    public function post($id, $slug) {
+        $post = Post::find($id);
+        return view('blog.post',['post' => $post]);
     }
 }

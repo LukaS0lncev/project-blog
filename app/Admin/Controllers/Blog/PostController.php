@@ -4,6 +4,7 @@ namespace App\Admin\Controllers\Blog;
 
 use App\Models\Blog\Category;
 use App\Models\Blog\Post;
+use App\Models\User;
 use App\Models\Blog\Tag;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
@@ -31,16 +32,28 @@ class PostController extends AdminController
     {
         $grid = new Grid(new Post());
         $grid->column('id', __('Id'));
-        $grid->column('title', __('Title'));
-        $grid->column('category.name');
+        $grid->column('title', __('Title'))->editable('textarea');
+        $grid->column('slug', __('Slug'))->editable('textarea');
+        //$grid->column('description', __('SEO description'))->editable('textarea')->width(200);
+
+        //$grid->column('keywords', __('SEO keywords'))->editable('textarea')->width(200);
+
+        $grid->picture('picture', 'Main image')->image();
+        $grid->column('category.name','Category');
+        $grid->column('user.name', 'Author');
         $grid->tags()->display(function ($tags) {
             $tags = array_map(function ($tag) {
                 return "<span class='label label-success'>{$tag['name']}</span>";
             }, $tags);
             return join('&nbsp;', $tags);
         });
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $states = [
+            'ON'  => ['value' => 1, 'text' => 'ON', 'color' => 'primary'],
+            'OFF' => ['value' => 2, 'text' => 'OFF', 'color' => 'danger'],
+        ];
+        $grid->column('status')->switch($states);
+        $grid->column('created_at', __('Created at'))->date('Y-m-d H:i:s')->sortable();
+        //$grid->column('updated_at', __('Updated at'));
 
         return $grid;
     }
@@ -57,6 +70,7 @@ class PostController extends AdminController
 
         $show->field('id', __('Id'));
         $show->column('title', __('Title'));
+        $show->picture()->image();
         $show->column('post', __('Post'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
@@ -72,11 +86,21 @@ class PostController extends AdminController
     protected function form()
     {
         $form = new Form(new Post());
-
-        $form->text('title', __('Title'));
+        $form->image('picture','Main image')->removable()->downloadable();
+        $form->text('title', __('Title'))->required();
+        $form->text('slug', __('Slug'));
+        $form->textarea('description', __('SEO description'));
+        $form->textarea('keywords', __('SEO keywords'));
         $form->simplemde('post', 'Post');
-        $form->select('blog_category_id')->options(Category::all()->pluck('name','id'));
-        $form->multipleSelect('tags','Tags')->options(Tag::all()->pluck('name','id'));
+        $form->select('blog_category_id','Category')->options(Category::all()->pluck('name','id'))->required();
+        $form->select('user_id', 'Author')->options(User::all()->pluck('name','id'))->required();
+        $form->multipleSelect('tags','Tags')->options(Tag::all()->pluck('name','id'))->required();
+        $states = [
+            'ON'  => ['value' => 1, 'text' => 'ON', 'color' => 'primary'],
+            'OFF' => ['value' => 2, 'text' => 'OFF', 'color' => 'danger'],
+        ];
+        $form->switch('status', 'Status')->states($states);
+
         return $form;
     }
 
