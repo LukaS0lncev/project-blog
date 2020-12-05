@@ -48,12 +48,6 @@
                             <!-- Entry Content
                             ============================================= -->
                             <div class="entry-content mt-0">
-
-                                <!-- Entry Image
-                                ============================================= -->
-                                <div class="entry-image alignleft">
-                                    <img src="/storage/{{$post->picture}}" alt="Blog Single">
-                                </div><!-- .entry-image end -->
-
                                 {!! $post->post_html !!}
+                            </div>
 @endsection
