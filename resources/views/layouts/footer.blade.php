@@ -189,7 +189,7 @@
 
                 <div class="col-md-6 text-center text-md-left">
                     &copy; 2020 Все права защищены.<br>
-                    <div class="copyright-links"><a href="/usloviya-ispolzovaniya">Условия использования</a> / <a href="/politika-konfidencialnosti">Политика конфиденциальности</a></div>
+                    <div class="copyright-links"><a href="article/usloviya-ispolzovaniya">Условия использования</a> / <a href="article/politika-konfidencialnosti">Политика конфиденциальности</a></div>
                 </div>
 
                 <div class="col-md-6 text-center text-md-right">

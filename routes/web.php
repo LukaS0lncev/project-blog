@@ -20,11 +20,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
-Route::get('{slug}', [App\Http\Controllers\ArticleController::class, 'article']);
+Route::get('article/{slug}', [App\Http\Controllers\ArticleController::class, 'article']);
 
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index']);
-Route::get('/blog/', [App\Http\Controllers\BlogController::class, 'index']);
-Route::get('/blog/{id}-{slug}', [App\Http\Controllers\BlogController::class, 'post']);
+Route::get('blog', [App\Http\Controllers\BlogController::class, 'index']);
+Route::get('blog/{id}-{slug}', [App\Http\Controllers\BlogController::class, 'post']);
 
 Route::post('upload/blog/image', [App\Http\Controllers\UploadController::class, 'PostBlogImageUpload']);
 Route::post('upload/blog/image/paste', [App\Http\Controllers\UploadController::class, 'PostBlogImageUploadPaste']);
