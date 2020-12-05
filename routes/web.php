@@ -20,6 +20,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
+Route::get('{slug}', [App\Http\Controllers\ArticleController::class, 'article']);
+
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index']);
 Route::get('/blog/', [App\Http\Controllers\BlogController::class, 'index']);
 Route::get('/blog/{id}-{slug}', [App\Http\Controllers\BlogController::class, 'post']);
@@ -27,6 +29,8 @@ Route::get('/blog/{id}-{slug}', [App\Http\Controllers\BlogController::class, 'po
 Route::post('upload/blog/image', [App\Http\Controllers\UploadController::class, 'PostBlogImageUpload']);
 Route::post('upload/blog/image/paste', [App\Http\Controllers\UploadController::class, 'PostBlogImageUploadPaste']);
 Route::post('upload/blog/file', [App\Http\Controllers\UploadController::class, 'PostBlogFileUpload']);
+
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
