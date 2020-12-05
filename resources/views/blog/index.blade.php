@@ -12,8 +12,7 @@
     <section id="page-title">
 
         <div class="container clearfix">
-            <h1>Блог</h1>
-            <span>Наши последние записи</span>
+            <h2>Блог</h2>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Главная</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Блог</li>
