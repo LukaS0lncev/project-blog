@@ -3,8 +3,6 @@
 <head>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="author" content="SemiColonWeb" />
-
     <!-- Stylesheets
     ============================================= -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" />
@@ -21,7 +19,7 @@
 
     <!-- Document Title
     ============================================= -->
-    <title>Home - Blog Layout | Canvas</title>
+    <title>Блог о Web разработке | Paimon Project</title>
 
 </head>
 
