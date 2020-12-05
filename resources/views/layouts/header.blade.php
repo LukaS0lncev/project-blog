@@ -6,8 +6,8 @@
             <!-- Logo
             ============================================= -->
             <div id="logo">
-                <a href="/" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="/img/logo.png" alt="Paimon.pro logo"></a>
-                <a href="/" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="/img/logo@2x.png" alt="Paimon.pro logo"></a>
+                <a href="/" class="standard-logo" ><img src="/img/logo.png" alt="Paimon.pro logo"></a>
+                <a href="/" class="retina-logo" ><img src="/img/logo.png" alt="Paimon.pro logo"></a>
             </div><!-- #logo end -->
 
             <div class="header-misc">
