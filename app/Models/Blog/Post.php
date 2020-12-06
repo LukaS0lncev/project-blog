@@ -30,14 +30,18 @@ class Post extends Model
     {
         static::creating(function ($post) {
             $parsedown = new \Parsedown();
-            $post->post_html = $parsedown->text($post->post);
+            $html = $parsedown->text($post->post);
+            $html = str_replace('<code>', '<code class="language-php">', $html);
+            $post->post_html = $html;
             $slug = self::translit($post->title);
             $post->slug = $slug;
         });
 
         static::updating(function ($post) {
             $parsedown = new \Parsedown();
-            $post->post_html = $parsedown->text($post->post);
+            $html = $parsedown->text($post->post);
+            $html = str_replace('<code>', '<code class="language-php">', $html);
+            $post->post_html = $html;
             $slug = self::translit($post->title);
             $post->slug = $slug;
         });
