@@ -5,6 +5,8 @@ namespace App\Models\Blog;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use App\Models\Tag;
+use App\Models\Category;
 
 class Post extends Model
 {
@@ -23,7 +25,7 @@ class Post extends Model
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class, 'blog_posts_blog_tags', 'post_id', 'tag_id');
+        return $this->belongsToMany(Tag::class, 'blog_posts_and_tags', 'post_id', 'tag_id');
     }
 
     protected static function booted()

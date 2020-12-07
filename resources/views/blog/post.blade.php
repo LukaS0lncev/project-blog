@@ -1,22 +1,17 @@
 @extends('layouts.app')
-@extends('widgets.subscribe')
-@extends('widgets.links')
-@extends('widgets.recent-posts')
-@extends('layouts.top-bar')
-@extends('layouts.footer')
-@extends('layouts.header')
 @inject('User', 'App\Models\User')
 @section('page-title')
     <!-- Page Title
 		============================================= -->
     <section id="page-title">
-        <div class="container clearfix">
-            <h2>{{$post->title}}</h2>
+        <div style="display: flex;" class="container clearfix">
+                <h2>{{$post->title}}</h2>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Главная</a></li>
                 <li class="breadcrumb-item" aria-current="page"><a href="/blog/">Блог</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{{$post->title}}</li>
             </ol>
+
         </div>
     </section><!-- #page-title end -->
 @endsection
@@ -63,6 +58,16 @@
                         </div>
                     </div>
                 </div>
+                <!-- Sidebar
+                ============================================= -->
+                <div class="sidebar col-lg-3">
+                    <div class="sidebar-widgets-wrap">
+
+                        <x-widgets.tags-cloud/>
+
+                    </div>
+                </div><!-- .sidebar end -->
+
             </div>
         </div>
     </div>

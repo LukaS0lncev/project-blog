@@ -1,11 +1,4 @@
 @extends('layouts.app')
-@extends('widgets.subscribe')
-@extends('widgets.links')
-@extends('widgets.recent-posts')
-@extends('layouts.top-bar')
-@extends('layouts.footer')
-@extends('layouts.header')
-@inject('User', 'App\Models\User')
 @section('page-title')
     <!-- Page Title
 		============================================= -->
@@ -86,10 +79,8 @@
                 <div class="sidebar col-lg-3">
                     <div class="sidebar-widgets-wrap">
 
-                        @yield('widget-subscribe')
-                        @yield('widget-links')
-                        @yield('widget-recent-posts')
-                        @yield('connect-with-us')
+                        <x-widgets.category-links/>
+                        <x-widgets.tags-cloud/>
 
                     </div>
                 </div><!-- .sidebar end -->

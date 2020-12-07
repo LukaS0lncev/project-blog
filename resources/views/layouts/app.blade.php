@@ -33,13 +33,13 @@
     <!-- Top Bar
 ============================================= -->
     <div id="top-bar">
-        @yield('top-bar')
+        @include('layouts.top-bar')
     </div><!-- #top-bar end -->
 
     <!-- Header
     ============================================= -->
     <header id="header" class="full-header">
-        @yield('header')
+        @include('layouts.header')
     </header><!-- #header end -->
 
         @yield('slider')
@@ -56,8 +56,7 @@
     <!-- Footer
     ============================================= -->
     <footer id="footer" class="dark">
-            {{--@yield('footer')--}}
-            @yield('copyrights')
+            @include('layouts.copyrights')
     </footer><!-- #footer end -->
 </div><!-- #wrapper end -->
 

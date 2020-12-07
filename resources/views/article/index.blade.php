@@ -3,7 +3,7 @@
 @extends('widgets.links')
 @extends('widgets.recent-posts')
 @extends('layouts.top-bar')
-@extends('layouts.footer')
+@extends('layouts.footer.blade.php.del')
 @extends('layouts.header')
 @inject('User', 'App\Models\User')
 @section('page-title')

@@ -24,7 +24,7 @@
 
 <hr>
 <!-- Footer -->
-@extends('layouts.footer')
+@extends('layouts.footer.blade.php.del')
 
 <!-- Bootstrap core JavaScript -->
 <script src="/vendor/jquery/jquery.min.js"></script>

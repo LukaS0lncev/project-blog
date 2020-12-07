@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Models\Blog;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Blog\Post;
 
 class Category extends Model
 {
     use HasFactory;
-    protected $table = 'blog_categories';
+    protected $table = 'categories';
 
     public function post()
     {

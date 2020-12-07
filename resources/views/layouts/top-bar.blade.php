@@ -1,4 +1,4 @@
-@section('top-bar')
+
     <div id="top-bar">
         <div class="container clearfix">
 
@@ -55,4 +55,4 @@
 
 </div>
 </div>
-@endsection
+

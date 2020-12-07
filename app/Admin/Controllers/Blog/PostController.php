@@ -2,10 +2,10 @@
 
 namespace App\Admin\Controllers\Blog;
 
-use App\Models\Blog\Category;
+use App\Models\Category;
 use App\Models\Blog\Post;
 use App\Models\User;
-use App\Models\Blog\Tag;
+use App\Models\Tag;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;

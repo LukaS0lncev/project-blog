@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Models\Blog;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Blog\Post;
 
 class Tag extends Model
 {
     use HasFactory;
-    protected $table = 'blog_tags';
+    protected $table = 'tags';
 
 
     public function posts()
     {
-        return $this->belongsToMany(Post::class, 'blog_posts_blog_tags', 'post_id', 'tag_id');
+        return $this->belongsToMany(Post::class, 'blog_posts_and_tags', 'post_id', 'tag_id');
     }
 
     protected static function booted()
