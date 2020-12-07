@@ -130,7 +130,7 @@ return [
     |
     |
     */
-    'version' => env('APP_VERSION', '1.0.0'),
+    'version' => env('1.3.1'),
 
 
     /*
