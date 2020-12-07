@@ -66,6 +66,7 @@ class CategoryController extends AdminController
         $form->text('name', __('Name'))->required();
         //$form->number('parent', __('Parent'));
         $form->text('slug', __('Slug'));
+        $form->textarea('description', __('Description'));
         return $form;
     }
 

@@ -30,6 +30,11 @@ Route::post('upload/blog/image', [App\Http\Controllers\UploadController::class, 
 Route::post('upload/blog/image/paste', [App\Http\Controllers\UploadController::class, 'PostBlogImageUploadPaste']);
 Route::post('upload/blog/file', [App\Http\Controllers\UploadController::class, 'PostBlogFileUpload']);
 
+Route::get('tag', [App\Http\Controllers\TagController::class, 'index']);
+Route::get('tag/{slug}', [App\Http\Controllers\TagController::class, 'tag']);
+
+Route::get('category', [\App\Http\Controllers\CategoryController::class, 'index']);
+Route::get('category/{slug}', [\App\Http\Controllers\CategoryController::class, 'category']);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

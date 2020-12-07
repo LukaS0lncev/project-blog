@@ -11,8 +11,7 @@ class IndexController extends Controller
 {
     public function index () {
         $posts = Post::paginate(10);
-        $tags = Tag::all();
-        return view('index',['posts' => $posts, 'tags' => $tags]);
+        return view('index',['posts' => $posts]);
 
     }
 }
