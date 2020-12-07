@@ -130,7 +130,7 @@ return [
     |
     |
     */
-    'version' => env('1.3.2'),
+    'version' => '1.3.3',
 
 
     /*
