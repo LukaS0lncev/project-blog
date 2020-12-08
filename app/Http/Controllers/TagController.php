@@ -15,9 +15,7 @@ class TagController extends Controller
 
     public function tag ($slug) {
         $tag = Tag::where('slug', '=',  $slug)->first();
-        //dd($tag->posts());
-        $posts = $tag->posts;
-        dd($posts);
+        $posts = $tag->posts()->paginate(10);
         return view('tag.tag',['posts' => $posts, 'tag' => $tag]);
     }
 }
