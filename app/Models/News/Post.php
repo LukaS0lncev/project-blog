@@ -2,10 +2,11 @@
 
 namespace App\Models\News;
 
-use App\Models\Category;
-use App\Models\Tag;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
+use App\Models\Tag;
+use App\Models\Category;
 
 class Post extends Model
 {
