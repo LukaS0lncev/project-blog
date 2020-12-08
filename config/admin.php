@@ -405,9 +405,9 @@ return [
 
             // Editor configuration
             'config' => [
-                'blogImageUpload' => "/upload/blog/image",
-                'blogImagePaste' => "/upload/blog/image/paste",
-                'blogFileUpload' => "/upload/blog/file"
+                'blogImageUpload' => "/admin/upload/blog/image",
+                'blogImagePaste' => "/admin/upload/blog/image/paste",
+                'blogFileUpload' => "/admin/upload/blog/file"
             ]
         ],
         'media-manager' => [

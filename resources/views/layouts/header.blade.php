@@ -37,11 +37,10 @@
                     <li class="menu-item {{ (request()->is('*blog*')) ? 'current' : '' }}">
                         <a class="menu-link" href="/blog"><div>Блог</div></a>
                     </li>
-                    {{--
                     <li class="menu-item {{ (request()->is('*news*')) ? 'current' : '' }}">
                         <a class="menu-link" href="/news"><div>Новости</div></a>
                     </li>
-                    --}}
+
                 </ul>
 
             </nav><!-- #primary-menu end -->

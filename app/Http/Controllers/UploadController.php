@@ -5,9 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Tools\ImageLog;
+use Illuminate\Http\Response;
 
 class UploadController extends Controller
 {
+
+    public function index ()
+    {
+        dd('test');
+    }
+
     public function PostBlogImageUpload (Request $request) {
         $save_path = 'public/images/blog/';
         foreach ($request->file('image') as $file) {

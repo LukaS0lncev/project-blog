@@ -1,18 +1,14 @@
 <?php
 
-namespace App\Admin\Controllers\Blog;
+namespace App\Admin\Controllers\News;
 
 use App\Models\Category;
-use App\Models\Blog\Post;
-use App\Models\User;
+use App\Models\News\Post;
 use App\Models\Tag;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
-use Encore\Admin\Facades\Admin;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class PostController extends AdminController
 {
@@ -21,7 +17,7 @@ class PostController extends AdminController
      *
      * @var string
      */
-    protected $title = 'Записи блога';
+    protected $title = 'Новости';
 
     /**
      * Make a grid builder.
@@ -31,12 +27,14 @@ class PostController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new Post());
+
         $grid->column('id', __('Id'));
-        $grid->column('title', __('Title'))->editable('textarea');
+        $grid->column('title', __('Title'));
         $grid->column('slug', __('Slug'))->editable('textarea');
         $grid->picture('picture', 'Main image')->image();
         $grid->column('category.name','Category');
         $grid->column('user.name', 'Author');
+
         $grid->tags()->display(function ($tags) {
             $tags = array_map(function ($tag) {
                 return "<span class='label label-success'>{$tag['name']}</span>";
@@ -48,7 +46,7 @@ class PostController extends AdminController
             'OFF' => ['value' => 2, 'text' => 'OFF', 'color' => 'danger'],
         ];
         $grid->column('status')->switch($states);
-        $grid->column('created_at', __('Created at'))->date('Y-m-d H:i:s')->sortable();
+        $grid->column('created_at', __('Created at'));
         return $grid;
     }
 
@@ -63,9 +61,16 @@ class PostController extends AdminController
         $show = new Show(Post::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->column('title', __('Title'));
-        $show->picture()->image();
-        $show->column('post', __('Post'));
+        $show->field('title', __('Title'));
+        $show->field('description', __('Description'));
+        $show->field('keywords', __('Keywords'));
+        $show->field('picture', __('Picture'));
+        $show->field('category_id', __('Category id'));
+        $show->field('user_id', __('User id'));
+        $show->field('status', __('Status'));
+        $show->field('slug', __('Slug'));
+        $show->field('post', __('Post'));
+        $show->field('post_html', __('Post html'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -97,5 +102,4 @@ class PostController extends AdminController
 
         return $form;
     }
-
 }
