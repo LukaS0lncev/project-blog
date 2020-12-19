@@ -48,7 +48,7 @@
                                                     @foreach($post->tags as $tag)
                                                         <a href="/tag/{{$tag->slug}}">{{$tag->name}}</a>
                                                 @endforeach
-                                                <li><i class="icon-folder-open"><a href="/category/{{$post->category->slug}}">{{$post->category->name}}</a></i>
+                                                <li><i class="icon-folder-open"></i><a href="/category/{{$post->category->slug}}">{{$post->category->name}}</a></i>
                                                 {{--<li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13</a></li>
                                                 <li><a href="index-blog-2.html#"><i class="icon-camera-retro"></i></a></li>--}}
                                             </ul>

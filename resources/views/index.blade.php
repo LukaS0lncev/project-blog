@@ -40,7 +40,8 @@
                                                     @foreach($post->tags as $tag)
                                                         <a href="/tag/{{$tag['slug']}}">{{$tag['name']}}</a>
                                                 @endforeach
-                                                <li><i class="icon-folder-open"><a href="/category/{{$post->categories_slug}}">{{$post->categories_name}}</a></i>
+                                                <li><i class="icon-folder-open"></i><a href="/category/{{$post->categories_slug}}">{{$post->categories_name}}</a></li>
+                                                <li><i class="icon-eye-open"></i>{{$post->views}}</li>
                                             </ul>
                                         </div>
                                         <div class="entry-content">

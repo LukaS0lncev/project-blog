@@ -19,6 +19,14 @@ class BlogController extends Controller
 
     public function post($id, $slug) {
         $post = Post::find($id);
+
+        if (empty($post->views)) {
+            $post->views = 1;
+        }
+        else {
+            $post->increment('views');
+        }
+        $post->save();
         return view('blog.post',['post' => $post]);
     }
 }
