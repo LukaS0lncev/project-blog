@@ -38,7 +38,7 @@
                                                 <li><a href="/user/{{$post->user_name}}"><i class="icon-user"></i> {{$post->user_name}}</a></li>
                                                 <li><i class="icon-tag"></i>
                                                     @foreach($post->tags as $tag)
-                                                        <a href="/tag/{{$tag['slug']}}">{{$tag['name']}}</a>
+                                                        <a href="/tag/{{$tag['slug']}}"><span class="badge badge-success">{{$tag['name']}}</span></a>
                                                 @endforeach
                                                 <li><i class="icon-folder-open"></i><a href="/category/{{$post->categories_slug}}">{{$post->categories_name}}</a></li>
                                                 <li><i class="icon-eye-open"></i>{{$post->views}}</li>

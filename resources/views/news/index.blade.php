@@ -46,9 +46,10 @@
                                                 <li><a href="/user/{{$post->user->id}}"><i class="icon-user"></i> {{$post->user->name}}</a></li>
                                                 <li><i class="icon-tag"></i>
                                                     @foreach($post->tags as $tag)
-                                                        <a href="/tag/{{$tag->slug}}">{{$tag->name}}</a>
+                                                        <a href="/tag/{{$tag->slug}}"><span class="badge badge-success">{{$tag->name}}</span></a>
                                                 @endforeach
                                                 <li><i class="icon-folder-open"></i><a href="/category/{{$post->category->slug}}">{{$post->category->name}}</a></li>
+                                                <li><i class="icon-eye-open"></i>{{$post->views}}</li>
                                                 {{--<li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13</a></li>
                                                 <li><a href="index-blog-2.html#"><i class="icon-camera-retro"></i></a></li>--}}
                                             </ul>
