@@ -16,10 +16,25 @@ use Illuminate\Support\Facades\DB;
 class IndexController extends Controller
 {
     public function index () {
+        //$posts = BlogPost::query()->union(NewsPost::query())->paginate(10);
+        //$blog_posts = BlogPost::all();
+        //$news_posts = NewsPost::all();
+        $posts = BlogPost::all()->merge(NewsPost::all());
+        $posts = self::paginate($posts);
+        //dd($posts);
+
+        //$posts =
+        //dd($blog_post);
+        return view('index',['posts' => $posts]);
+    }
+
+    public function index_back () {
         /*
          * Альтернативный код, но здесь две модели в одну объеденяются, не подходит
          * $posts = BlogPost::query()->union(NewsPost::query())->paginate(10);
          */
+
+        //$posts = BlogPost::query()->union(NewsPost::query())->paginate(10);
 
         $blogs = DB::table('blog_posts')
             ->join('categories', 'blog_posts.category_id', '=', 'categories.id')

@@ -4,7 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Blog\Post;
+use App\Models\Blog\Post as BlogPost;
+use App\Models\News\Post as NewsPost;
 
 class Tag extends Model
 {
@@ -12,9 +13,14 @@ class Tag extends Model
     protected $table = 'tags';
 
 
-    public function posts()
+    public function blog_posts()
     {
-        return $this->belongsToMany(Post::class, 'blog_posts_and_tags', 'tag_id', 'post_id');
+        return $this->belongsToMany(BlogPost::class, 'blog_posts_and_tags', 'tag_id', 'post_id');
+    }
+
+    public function news_posts()
+    {
+        return $this->belongsToMany(NewsPost::class, 'news_posts_and_tags', 'tag_id', 'post_id');
     }
 
     protected static function booted()

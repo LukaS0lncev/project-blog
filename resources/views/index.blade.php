@@ -18,10 +18,7 @@
                         @foreach ($posts as $post)
                             <div class="entry col-12">
                                 @php
-                                    //  setlocale(LC_ALL, 'ru_RU', 'ru_RU.UTF-8', 'ru', 'russian');
                                       $date = new DateTime($post->created_at);
-                                  //dd(strftime("%B %d, %Y", time()));
-                                  //dd("/storage/".$post->picture);
                                 @endphp
                                 <div class="grid-inner row no-gutters">
                                     <div class="entry-image col-md-4">
@@ -29,7 +26,7 @@
                                     </div>
                                     <div class="col-md-8 pl-md-4">
                                         <div class="entry-title title-sm">
-                                            <h2><a href="{{$post->route}}{{$post->id}}-{{$post->slug}}">{{$post->title}}</a></h2>
+                                            <h2><a href="{{$post->path}}{{$post->id}}-{{$post->slug}}">{{$post->title}}</a></h2>
                                         </div>
                                         <div class="entry-meta">
                                             <ul>
@@ -40,13 +37,13 @@
                                                     @foreach($post->tags as $tag)
                                                         <a href="/tag/{{$tag['slug']}}"><span class="badge badge-success">{{$tag['name']}}</span></a>
                                                 @endforeach
-                                                <li><i class="icon-folder-open"></i><a href="/category/{{$post->categories_slug}}">{{$post->categories_name}}</a></li>
+                                                <li><i class="icon-folder-open"></i><a href="/category/{{$post->category->slug}}">{{$post->category->name}}</a></li>
                                                 <li><i class="icon-eye-open"></i>{{$post->views}}</li>
                                             </ul>
                                         </div>
                                         <div class="entry-content">
-                                            <p>{{ Illuminate\Support\Str::limit($post->description, 40) }}</p>
-                                            <a href="{{$post->route}}{{$post->id}}-{{$post->slug}}" class="more-link">Читать далее</a>
+                                            <p>{{ Illuminate\Support\Str::limit($post->description, 250) }}</p>
+                                            <a href="{{$post->path}}{{$post->id}}-{{$post->slug}}" class="more-link">Читать далее</a>
                                         </div>
                                     </div>
                                 </div>

@@ -55,7 +55,7 @@
                                             </ul>
                                         </div>
                                         <div class="entry-content">
-                                            <p>{{ Illuminate\Support\Str::limit($post->description, 255) }}</p>
+                                            <p>{{ Illuminate\Support\Str::limit($post->description, 250) }}</p>
                                             <a href="/news/{{$post->id}}-{{$post->slug}}" class="more-link">Читать далее</a>
                                         </div>
                                     </div>

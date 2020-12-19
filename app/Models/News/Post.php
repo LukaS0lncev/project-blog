@@ -39,6 +39,7 @@ class Post extends Model
             $html = $parsedown->text($post->post);
             $html = str_replace('<code>', '<code class="language-php">', $html);
             $post->post_html = $html;
+            $post->path = $this->route;
             $slug = translit($post->title);
             $post->slug = $slug;
         });
