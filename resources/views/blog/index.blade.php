@@ -80,8 +80,8 @@
                 <div class="sidebar col-lg-3">
                     <div class="sidebar-widgets-wrap">
 
-                        <x-widgets.category-links/>
-                        <x-widgets.tags-cloud/>
+                        <x-widgets.category-links-blog/>
+                        <x-widgets.tags-cloud-blog/>
 
                     </div>
                 </div><!-- .sidebar end -->

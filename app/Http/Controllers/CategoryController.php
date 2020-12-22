@@ -17,7 +17,7 @@ class CategoryController extends Controller
 
     public function category ($slug) {
         $category = Category::where('slug', '=',  $slug)->first();
-        $posts = $category->posts()->paginate(10);
+        $posts = $category->blog_posts()->paginate(10);
         return view('category.category',['posts' => $posts, 'category' => $category]);
     }
 }

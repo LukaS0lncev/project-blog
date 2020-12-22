@@ -29,9 +29,6 @@ class CategoryController extends AdminController
         $grid->column('id', __('Id'));
         $grid->column('name', __('Name'))->editable('textarea');
         $grid->column('slug', __('Slug'))->editable('textarea');
-        //$grid->column('created_at', __('Created at'));
-        //$grid->column('updated_at', __('Updated at'));
-
         return $grid;
     }
 
@@ -48,9 +45,6 @@ class CategoryController extends AdminController
         $show->field('id', __('Id'));
         $show->field('name', __('Name'));
         $show->field('slug', __('Slug'));
-        //$show->field('created_at', __('Created at'));
-        //$show->field('updated_at', __('Updated at'));
-
         return $show;
     }
 
@@ -64,7 +58,6 @@ class CategoryController extends AdminController
         $form = new Form(new Category());
 
         $form->text('name', __('Name'))->required();
-        //$form->number('parent', __('Parent'));
         $form->text('slug', __('Slug'));
         $form->textarea('description', __('Description'));
         return $form;

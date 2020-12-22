@@ -83,8 +83,8 @@
                 <div class="sidebar col-lg-3">
                     <div class="sidebar-widgets-wrap">
 
-                        <x-widgets.category-links/>
-                        <x-widgets.tags-cloud/>
+                        <x-widgets.category-links-all/>
+                        <x-widgets.tags-cloud-all/>
 
                     </div>
                 </div><!-- .sidebar end -->

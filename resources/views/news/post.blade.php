@@ -64,7 +64,8 @@
                 <div class="sidebar col-lg-3">
                     <div class="sidebar-widgets-wrap">
 
-                        <x-widgets.tags-cloud/>
+                        <x-widgets.category-links-news/>
+                        <x-widgets.tags-cloud-news/>
 
                     </div>
                 </div><!-- .sidebar end -->

@@ -27,7 +27,7 @@
                     <div class="entry col-lg-3 col-md-4 col-sm-6 col-12">
                         <div class="grid-inner">
                             <div class="entry-title">
-                                <h2><a href="/tag/{{$tag->slug}}">{{$category->name}}</a></h2>
+                                <h2><a href="/tag/{{$tag->slug}}">{{$tag->name}}</a></h2>
                             </div>
                             <div class="entry-content">
                                 <p>{{$tag->description}}</p>
@@ -41,5 +41,6 @@
 
             </div><!-- #posts end -->
         </div>
+
     </div>
 @endsection

@@ -5,7 +5,7 @@ namespace App\View\Components\Widgets;
 use App\Models\Category;
 use Illuminate\View\Component;
 
-class CategoryLinks extends Component
+class CategoryLinksNews extends Component
 {
     /**
      * Create a new component instance.
@@ -24,7 +24,12 @@ class CategoryLinks extends Component
      */
     public function render()
     {
-        $categories = Category::all();
-        return view('components.widgets.category-links', ['categories' => $categories]);
+        $categories = array();
+        foreach (Category::all() as $category) {
+            if(count($category->news_posts()->get()->toArray()) != 0) {
+                $categories[] = ['id'  => $category->id, 'name' => $category->name, 'slug' => $category->slug];
+            }
+        }
+        return view('components.widgets.category-links-news', ['categories' => $categories]);
     }
 }
