@@ -4,13 +4,16 @@
     <!-- Page Title
 		============================================= -->
     <section id="page-title">
-        <div style="display: flex;" class="container clearfix">
+        <div style="display: flex; flex-direction: column;" class="container clearfix">
                 <h2>{{$post->title}}</h2>
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Главная</a></li>
-                <li class="breadcrumb-item" aria-current="page"><a href="/blog/">Блог</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{{$post->title}}</li>
-            </ol>
+            <div style="display: flex; flex-direction: column;" class="container clearfix">
+                <ol  class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Главная</a></li>
+                    <li class="breadcrumb-item" aria-current="page"><a href="/blog/">Блог</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{$post->title}}</li>
+                </ol>
+            </div>
+
 
         </div>
     </section><!-- #page-title end -->

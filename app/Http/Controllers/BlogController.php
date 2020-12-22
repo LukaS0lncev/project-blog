@@ -13,7 +13,8 @@ class BlogController extends Controller
 {
     public function index () {
 
-        $posts = Post::paginate(10);
+        $posts = Post::where('status', 1)->paginate(10);
+
         return view('blog.index',['posts' => $posts]);
     }
 
