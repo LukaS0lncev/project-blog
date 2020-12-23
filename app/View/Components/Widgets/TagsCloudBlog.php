@@ -27,7 +27,7 @@ class TagsCloudBlog extends Component
     {
         $tags = array();
         foreach (Tag::all() as $tag) {
-            if(count($tag->blog_posts()->get()->toArray()) != 0) {
+            if(count($tag->blog_posts()->where('status', 1)->get()->toArray()) != 0) {
                 $tags[] = ['id'  => $tag->id, 'name' => $tag->name, 'slug' => $tag->slug];
             }
         }

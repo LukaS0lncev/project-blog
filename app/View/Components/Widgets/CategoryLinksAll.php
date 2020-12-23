@@ -26,7 +26,7 @@ class CategoryLinksAll extends Component
     {
         $categories = array();
         foreach (Category::all() as $category) {
-            if((count($category->blog_posts()->get()->toArray()) != 0) || (count($category->news_posts()->get()->toArray()) != 0)) {
+            if((count($category->blog_posts()->where('status', 1)->get()->toArray()) != 0) || (count($category->news_posts()->where('status', 1)->get()->toArray()) != 0)) {
                 $categories[] = ['id'  => $category->id, 'name' => $category->name, 'slug' => $category->slug];
             }
         }

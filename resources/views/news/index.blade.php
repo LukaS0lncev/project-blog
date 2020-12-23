@@ -43,7 +43,7 @@
                                             <ul>
                                                 <li><i class="icon-calendar3"></i> {{$date->format('F j, Y')}}</li>
 
-                                                <li><a href="/user/{{$post->user->id}}"><i class="icon-user"></i> {{$post->user->name}}</a></li>
+                                                <li><i class="icon-user"></i> {{$post->user->name}}</li>
                                                 <li><i class="icon-tag"></i>
                                                     @foreach($post->tags as $tag)
                                                         <a href="/tag/{{$tag->slug}}"><span class="badge badge-success">{{$tag->name}}</span></a>
