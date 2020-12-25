@@ -103,7 +103,7 @@ class PostController extends AdminController
             'OFF' => ['value' => 2, 'text' => 'OFF', 'color' => 'danger'],
         ];
         $form->switch('status', 'Status')->states($states);
-
+        $form->datetime('created_at', __('Created at'));
         return $form;
     }
 }
