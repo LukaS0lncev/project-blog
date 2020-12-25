@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\DB;
 class IndexController extends Controller
 {
     public function index () {
-        $posts = BlogPost::all()->where('status', 1)->merge(NewsPost::all()->where('status', 1));
+        $posts = BlogPost::all()->where('status', 1)->merge(NewsPost::all()->where('status', 1))->sortByDesc('created_at');
         $posts = self::paginate($posts);
 
         return view('index',['posts' => $posts]);

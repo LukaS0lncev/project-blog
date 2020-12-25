@@ -34,7 +34,7 @@ class TagController extends Controller
     public function tag ($slug) {
 
         $tag = Tag::where('slug', '=',  $slug)->first();
-        $posts = $tag->blog_posts()->where('status', 1)->get()->merge($tag->news_posts()->where('status', 1)->get());
+        $posts = $tag->blog_posts()->where('status', 1)->get()->merge($tag->news_posts()->where('status', 1)->get())->sortByDesc('created_at');
         $posts = self::paginate($posts, 10);
         return view('tag.tag',['posts' => $posts, 'tag' => $tag]);
     }

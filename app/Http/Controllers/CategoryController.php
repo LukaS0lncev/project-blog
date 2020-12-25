@@ -19,7 +19,7 @@ class CategoryController extends Controller
 
     public function category ($slug) {
         $category = Category::where('slug', '=',  $slug)->first();
-        $posts = $category->blog_posts()->where('status', 1)->get()->merge($category->news_posts()->where('status', 1)->get());
+        $posts = $category->blog_posts()->where('status', 1)->get()->merge($category->news_posts()->where('status', 1)->get())->sortByDesc('created_at');
         $posts = self::paginate($posts, 10);
         return view('category.category',['posts' => $posts, 'category' => $category]);
     }
