@@ -18,9 +18,9 @@ class NewsController extends Controller
     public function post($id, $slug) {
         $post = Post::find($id);
         $view = new ViewLog();
-        $view->remote_addr = $_SERVER['REMOTE_ADDR'];
-        $view->http_referer = $_SERVER['HTTP_REFERER'];
-        $view->http_user_agent = $_SERVER['HTTP_USER_AGENT'];
+        $view->remote_addr = $_SERVER['REMOTE_ADDR'] ?? "";
+        $view->http_referer = $_SERVER['HTTP_REFERER'] ?? "";
+        $view->http_user_agent = $_SERVER['HTTP_USER_AGENT'] ?? "";
         $view->viewed_url = URL::current();
         $view->save();
         if (empty($post->views)) {
