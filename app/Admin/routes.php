@@ -17,6 +17,7 @@ Route::group([
     $router->resource('tags', \TagController::class);
     $router->resource('blog/posts', \Blog\PostController::class);
     $router->resource('news/posts', \News\PostController::class);
+    $router->resource('tools/view/log', \Tools\ViewLogController::class);
     $router->resource('articles', ArticleController::class);
 
     $router->get('upload/blog/image', [App\Http\Controllers\UploadController::class, 'index']);

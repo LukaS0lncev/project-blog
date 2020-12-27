@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Blog\Post;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Tools\ViewLog;
+use Illuminate\Support\Facades\URL;
 
 
 class BlogController extends Controller
@@ -19,6 +21,12 @@ class BlogController extends Controller
 
     public function post($id, $slug) {
         $post = Post::find($id);
+        $view = new ViewLog();
+        $view->remote_addr = $_SERVER['REMOTE_ADDR'];
+        $view->http_referer = $_SERVER['HTTP_REFERER'];
+        $view->http_user_agent = $_SERVER['HTTP_USER_AGENT'];
+        $view->viewed_url = URL::current();
+        $view->save();
 
         if (empty($post->views)) {
             $post->views = 1;
