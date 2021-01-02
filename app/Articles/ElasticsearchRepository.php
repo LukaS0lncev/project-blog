@@ -75,12 +75,14 @@ class ElasticsearchRepository implements ArticlesRepository
 
         if ($model_name == 'BlogPost') {
             return BlogPost::findMany($ids)
+                ->where('status', 1)
                 ->sortBy(function ($article) use ($ids) {
                     return array_search($article->getKey(), $ids);
                 });
         }
         if ($model_name == 'NewsPost') {
             return NewsPost::findMany($ids)
+                ->where('status', 1)
                 ->sortBy(function ($article) use ($ids) {
                     return array_search($article->getKey(), $ids);
                 });

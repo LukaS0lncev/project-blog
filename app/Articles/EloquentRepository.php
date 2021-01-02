@@ -11,11 +11,13 @@ class EloquentRepository implements ArticlesRepository
     public function search(string $query = ''): Array
     {
         $blog_posts =  BlogPost::query()
+            ->where('status', 1)
             ->where('post', 'like', "%{$query}%")
             ->orWhere('title', 'like', "%{$query}%")
             ->get();
 
         $news_posts =  NewsPost::query()
+            ->where('status', 1)
             ->where('post', 'like', "%{$query}%")
             ->orWhere('title', 'like', "%{$query}%")
             ->get();
