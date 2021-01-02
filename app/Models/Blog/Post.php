@@ -7,10 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\Tag;
 use App\Models\Category;
+use App\Search\Searchable;
+
 
 class Post extends Model
 {
     use HasFactory;
+    use Searchable;
+
     protected $table = 'blog_posts';
 
     /*

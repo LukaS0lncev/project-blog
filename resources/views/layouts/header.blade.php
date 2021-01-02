@@ -12,13 +12,13 @@
 
 
             <div class="header-misc">
-                {{--
+
                     <!-- Top Search
                     ============================================= -->
                     <div id="top-search" class="header-misc-icon">
                         <a href="#" id="top-search-trigger"><i class="icon-line-search"></i><i class="icon-line-cross"></i></a>
                     </div><!-- #top-search end -->
-                --}}
+
             </div>
 
 
@@ -45,8 +45,14 @@
 
             </nav><!-- #primary-menu end -->
 
-            <form class="top-search-form" action="/search" method="post">
-                <input type="text" name="search" class="form-control" value="" placeholder="Текст для поиска..." autocomplete="off">
+            <form class="top-search-form" action="{{ url('search') }}" method="get">
+                <input
+                    type="text"
+                    name="q"
+                    class="form-control"
+                    placeholder="Текст для поиска..."
+                    value="{{ request('q') }}"
+                />
             </form>
 
         </div>
