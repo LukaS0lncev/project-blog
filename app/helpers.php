@@ -14,3 +14,20 @@
         return $s; // возвращаем результат
     }
 
+    function search_in_array_key($array, $key, $value)
+    {
+        $results = array();
+
+        if (is_array($array)) {
+            if (isset($array[$key]) && $array[$key] == $value) {
+                $results[] = $array;
+            }
+
+            foreach ($array as $subarray) {
+                $results = array_merge($results, search_in_array_key($subarray, $key, $value));
+            }
+        }
+
+        return $results;
+    }
+

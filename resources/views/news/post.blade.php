@@ -41,10 +41,6 @@
                                 <ul>
                                     <li><i class="icon-calendar3"></i> {{$date->format('F j, Y')}}</li>
                                     <li><a href="/user/{{$post->user->id}}"><i class="icon-user"></i> {{$post->user->name}}</a></li>
-                                    <li><i class="icon-tag"></i>
-                                        @foreach($post->tags as $tag)
-                                            <a href="/tag/{{$tag->slug}}"><span class="badge badge-success">{{$tag->name}}</span></a>
-                                    @endforeach
                                     <li><i class="icon-folder-open"></i><a href="/category/{{$post->category->slug}}">{{$post->category->name}}</a></li>
                                     <li><i class="icon-eye-open"></i>{{$post->views}}</li>
                                     {{--<li><a href="blog-single-small.html#"><i class="icon-comments"></i> 43 Comments</a></li>
@@ -57,6 +53,38 @@
                             <div class="entry-content mt-0">
                                 {!! $post->post_html !!}
                             </div>
+                            <!-- Tag Cloud
+                            ============================================= -->
+                            <div class="tagcloud clearfix bottommargin">
+                                @foreach($post->tags as $tag)
+                                    <a href="/tag/{{$tag->slug}}">{{$tag->name}}</a>
+                                @endforeach
+                            </div><!-- .tagcloud end -->
+
+                            <div class="clear"></div>
+
+                            <div id="like_alert" class="alert alert-dismissible fade show" role="alert" style="display:none;">
+                                <strong id="like_message"></strong>
+                            </div>
+
+                            <!-- Post rating
+============================================= -->
+                            <div class="si-share border-0 d-flex justify-content-between align-items-center">
+                                <h4>Оцените статью:</h4>
+                                <div>
+                                    <a onclick="thumbs_up_or_down('up', 'NewsPost', '{{$post->id}}')" class="social-icon si-borderless si-green">
+                                        <i class="icon-thumbs-up"></i>
+                                        <i class="icon-thumbs-up"></i>
+                                    </a>
+
+                                    <a onclick="thumbs_up_or_down('down', 'NewsPost', '{{$post->id}}')" class="social-icon si-borderless si-red">
+                                        <i class="icon-thumbs-down"></i>
+                                        <i class="icon-thumbs-down"></i>
+                                    </a>
+
+                                </div>
+                            </div><!-- Post rating  End -->
+
 
                         </div>
                     </div>

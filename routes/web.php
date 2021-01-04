@@ -45,17 +45,7 @@ Route::get('tag/{slug}', [App\Http\Controllers\TagController::class, 'tag']);
 Route::get('category', [\App\Http\Controllers\CategoryController::class, 'index']);
 Route::get('category/{slug}', [\App\Http\Controllers\CategoryController::class, 'category']);
 
-
-/*
-Route::post('search', function (ArticlesRepository $repository) {
-    $posts = $repository->search(request('q'));
-    return view('search.index', [
-        'posts' => $posts,
-        'q' => request('q')
-    ]);
-});
-*/
-//Route::controller('search','SearchController');
+Route::post('/api/like/', [\App\Http\Controllers\LikeController::class, 'sendLike']);
 
 Route::get('search', [\App\Http\Controllers\SearchController::class, 'getIndex']);
 

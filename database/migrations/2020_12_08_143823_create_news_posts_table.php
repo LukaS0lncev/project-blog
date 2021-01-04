@@ -17,6 +17,10 @@ class CreateNewsPostsTable extends Migration
             $table->id();
             $table->timestamps();
         });
+
+        Schema::table('news_posts', function (Blueprint $table) {
+            $table->integer('views')->default(0);
+        });
     }
 
     /**

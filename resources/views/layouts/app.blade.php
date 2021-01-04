@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="/css/animate.css" type="text/css" />
     <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/prism/css/prism.css" type="text/css" />
-
     <link rel="stylesheet" href="/css/custom.css" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <!-- Document Title
     ============================================= -->
@@ -74,6 +74,8 @@
 <script src="/js/functions.js"></script>
 
 <script src="/vendor/prism/js/prism.js"></script>
+<script src="/js/likes.js"></script>
+
 
 </body>
 </html>

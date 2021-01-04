@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBlogPostsTable extends Migration
+class CreateLikeLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateBlogPostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('blog_posts', function (Blueprint $table) {
+        Schema::create('tools_like_logs', function (Blueprint $table) {
             $table->id();
+            $table->string('like_status', 255);
+            $table->text('remote_addr');
+            $table->text('http_user_agent');
+            $table->string('model', 255);
+            $table->integer('post_id');
             $table->timestamps();
-        });
-
-        Schema::table('blog_posts', function (Blueprint $table) {
-            $table->integer('views')->default(0);
         });
     }
 
@@ -30,6 +31,6 @@ class CreateBlogPostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blog_posts');
+        Schema::dropIfExists('tools_like_logs');
     }
 }

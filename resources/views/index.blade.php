@@ -38,6 +38,11 @@
                                                 @endforeach
                                                 <li><i class="icon-folder-open"></i><a href="/category/{{$post->category->slug}}">{{$post->category->name}}</a></li>
                                                 <li><i class="icon-eye-open"></i>{{$post->views}}</li>
+                                                @if(isset($post->likes))
+                                                <li><i class="icon-thumbs-up"></i>{{$post->likes}}</li>
+                                                @else
+                                                <li><i class="icon-thumbs-up"></i>0</li>
+                                                @endif
                                             </ul>
                                         </div>
                                         <div class="entry-content">
