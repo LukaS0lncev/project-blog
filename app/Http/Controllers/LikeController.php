@@ -23,12 +23,15 @@ class LikeController extends Controller
             ->where('model', $request->model)
             ->where('post_id', $request->id)
             ->latest()
-            ->first()
-            //->get()
-            ->toArray();
-        //dd($likes);
+            ->first();
+        if($likes){
+            $likes = $likes->toArray();
+        }
+        else {
+            $likes = array();
+        }
+
         if(count($likes) > 0) {
-            //$results = search_in_array_key($likes, 'like_status', $request->like);
             if($likes['like_status'] != $like_status) {
 
                 if ($request->model == 'BlogPost') {
