@@ -20,6 +20,7 @@ class CreateBlogPostsTable extends Migration
 
         Schema::table('blog_posts', function (Blueprint $table) {
             $table->integer('views')->default(0);
+            $table->integer('likes')->default(0);
         });
     }
 
